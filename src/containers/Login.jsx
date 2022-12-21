@@ -4,22 +4,28 @@ import { FcGoogle } from "react-icons/fc";
 import { motion } from "framer-motion";
 import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth"
 import { app } from "../config/firebase.config";
+import { validateJWTToken } from "../api";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const firebaseauth = getAuth(app)
   const google_Provider = new GoogleAuthProvider();
+
+  const navigate = useNavigate();
 
   const loginwithgoogle = async () => {
     await signInWithPopup(firebaseauth,google_Provider).then(userCred => {
       firebaseauth.onAuthStateChanged(userCred => {
         if(userCred){
           userCred.getIdToken().then (token => {
-            console.log(token);
-          })
-        }
-      })
-    })
-
-  }
+            validateJWTToken(token).then(data => {
+              console.log(data);
+              navigate("/",{replace:true});
+            });
+          });
+        };
+      });
+    });
+  };
   return (
     <div className="w-screen h-screen relative overflow-hidden flex items-center justify-center">
       <video
