@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         bgoverlay: "rgba(0,0,0,0.5)",
         lightoverlay: "rgba(256,256,256,0.2)",
+        textcolor : "#555",
+        textdarkcolor:"#222",
+        primary : "#fbfbfb",
       },
     },
   },
