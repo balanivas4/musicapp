@@ -24,7 +24,9 @@ useEffect(() => {
           navigate("/",{replace:true});
         });
       });
-    };
+    }else{
+      navigate("/login",{replace:true});
+    }
   });
   return (() => console.log("After Rendering"))
 },[])

@@ -1,4 +1,5 @@
 import React from 'react'
+import Bannercomponent from './Bannercomponent'
 import Searchcomponent from './Searchcomponent'
 
 
@@ -7,6 +8,7 @@ const Middlecontainer = () => {
     <div className='col-span-8'>
       {/* search section */}
       <Searchcomponent/>
+      <Bannercomponent/>
     
     </div>
   )
