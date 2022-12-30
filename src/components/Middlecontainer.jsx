@@ -1,6 +1,5 @@
 import React from 'react'
-import Bannercomponent from './Bannercomponent'
-import Searchcomponent from './Searchcomponent'
+import {Bannercomponent,Searchcomponent} from "../components"
 
 
 const Middlecontainer = () => {

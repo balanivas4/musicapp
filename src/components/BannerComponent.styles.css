@@ -1,0 +1,10 @@
+.model-container{
+    height: 100%;
+    position: absolute;
+}
+.model-img{
+    height: 60%;
+    position: relative;
+    bottom:22%;
+    left: 172%;
+}
